@@ -31,8 +31,41 @@ In this section,it was noticed that a character in the form of a bold star was s
 
 
 ### Contract Column Transformation
-The data cleaning process that was carried out in this section was in different categories.The contract column contained contract start year and end year,informations about the number of years the player spent in the club and the agreement that each player was under in the club.Below is an image representing what it looked like.
+The data cleaning process that was carried out in this section was in different categories.The contract column contained contract start year and end year,informations about the number of years the player spent in the club,and the agreement that each player was under in the club.Below is an image representing what it looked like.
 
+![](Agreement_example.png)
 
+Afterwards,an **Agreement** column was the first transformation that was made.The agreement column was created using an **M-Language**
 
+if Text.Contains([Contract], "Free") then 
+    "Free" 
+else if Text.Contains([Contract], "Loan") then 
+    "Loan" 
+else 
+    "Contract"
+    
+ Below, is the interpretation of the **M-Language**
+ 
+ ![](Agreement_new.png)
+ 
+ The second transformation that was made was on the **Duration** column which also was done using an **M-Language**
+ 
+ if Text.Contains([Contract], "~") then
+    Number.From(Text.AfterDelimiter([Contract], "~")) - Number.From(Text.BeforeDelimiter([Contract], "~"))
+else
+    0
+    
+ Below, is the response to the above **M-Language**
+ 
+ ![](Duration.png)
+ 
+ Finally:tired_face:to get our Sign in Year and Signed out Year,i used the Split column by Delimiter fuction. Which allows you to split column using several characters.The character i wanted was not given,so i used the Custom character and specified it '~'
+ 
 
+Here is the transformation:point_down:
+
+![]()
+ 
+ 
+ 
+ 
