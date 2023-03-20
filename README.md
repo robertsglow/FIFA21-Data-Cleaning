@@ -65,7 +65,11 @@ else
 Here is the transformation:point_down:
 
 ![](Sign-in_Sign-out.png)
+
+
+### Hits Column Transformation
+In this column, there were values containing the letter "K"(1.6K) instead of 1600.To achieve this, i removed the value K, and multiplied the remaining values by 1000 
  
+Here is an image of what it looked before
  
- 
- 
+
