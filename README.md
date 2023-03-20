@@ -14,7 +14,7 @@ The dataset contained a column that displays the link to the image of each playe
 
 ### BOV,OVA,POT Cleaning
 In this section,it was noticed that data that was supposed to be in percentages,were recorded in text.The transformation that was done as regards this was to first divide the values by 100,after then we can convert it to pecentages.In the Power Query editor,under the Transform tab locate the Standard box and then divide the values given,then you have your answer:relieved: 
-Below is the images before and after transformation.
+Below is the image before and after transformation.
 
 
 ![](BOV,OVA,POT.png)
