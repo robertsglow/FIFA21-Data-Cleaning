@@ -76,13 +76,25 @@ Here is an image of what it looked before
 
 The resultant is the after of what the column looks like after performing data transformation using the **M-Language** to convert the values back to whole number.
 if Text.Contains([Hit], "K") then Number.From(Text.BeforeDelimiter([Hit], "K")) * 1000 else Number.From([Hit])
-
+ 
 ![](Hits_new.png)
 
 ### Values, Release Clause, Wages Column Transformation
 Value,Release Clause,and Wage contained string values in each of the column there was a  “€" sign across each columns and they were removed using the same method. I removed this by replacing the _Euro_ sign with **Blank**. The Value and Release Clause column contained "M", and the same process was repeated. I replaced "M" with **Blank** and it was effected in the column. The Wages column contained the value "K"
 Here is how the Columns looked like before transformation:expressionless:
 
-![]()
+![](Value,Release-Clause,Wage-.png)
 
+**M-Language** was written to covert our values to million and multiply it by the current conversion rate which is 1.06
+- Release Clause
+(if Text.Contains([Release Clause],"M") then Number.From(Text.BeforeDelimiter([Release Clause],"M"))*1000000 else Number.From(Text.BeforeDelimiter([Release Clause],"K"))*1000)*1.06
 
+- Values 
+(if Text.Contains([Value],"M") then Number.From(Text.BeforeDelimiter([Value],"M"))*1000000 else Number.From(Text.BeforeDelimiter([Value],"K"))*1000)*1.06)
+
+- Wages
+Wage Column if Text.Contains([Wage], "K") then Number.From(Text.BeforeDelimiter([Wage], "K")) * 1000 * 1.06 else Number.From([Wage]) * 1.06
+
+After all these transformations have been applied to the previous Column, this is what the Column looks like:cowboy_hat_face:
+
+![](V,R,Wage_new.png)
