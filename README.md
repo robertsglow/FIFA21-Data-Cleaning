@@ -19,4 +19,20 @@ Below is the images before and after transformation.
 
 ![](BOV,OVA,POT.png)
 
-![]()
+![](BOV,OVA,POT-new.png)
+
+### WF,IR,SM Column Cleaning
+In this section,it was noticed that a character in the form of a bold star was scraped with the file,and it was my duty to remove the string character that was alongside the value.To perform this tranformation,in my Power Query editor,in the Add Column bar,i reached for the Column from Example icon in other to do the transformation.Below is the Before and After transformation,and of course:sunglasses:i renamed my column header for easy identification.
+
+
+![](WF,IR,SM.png)
+
+![](WF,IR_SM-new.png)
+
+
+### Contract Column Transformation
+The data cleaning process that was carried out in this section was in different categories.The contract column contained contract start year and end year,informations about the number of years the player spent in the club and the agreement that each player was under in the club.Below is an image representing what it looked like.
+
+
+
+
