@@ -55,11 +55,11 @@ else
 else
     0
     
- Below, is the response to the above **M-Language**
+ Below, is the result to the above **M-Language**
  
  ![](Duration.png)
  
- Finally:tired_face:to get our Sign in Year and Signed out Year,i used the Split column by Delimiter fuction. Which allows you to split column using several characters.The character i wanted was not given,so i used the Custom character and specified it '~'
+ Finally:tired_face:to get our Sign in Year and Signed out Year, i used the Split column by Delimiter fuction. Which allows you to split column using several characters.The character i wanted was not given,so i used the Custom character and specified it '~'
  
 
 Here is the transformation:point_down:
@@ -72,4 +72,17 @@ In this column, there were values containing the letter "K"(1.6K) instead of 160
  
 Here is an image of what it looked before
  
+![](Hits-.png)
+
+The resultant is the after of what the column looks like after performing data transformation using the **M-Language** to convert the values back to whole number.
+if Text.Contains([Hit], "K") then Number.From(Text.BeforeDelimiter([Hit], "K")) * 1000 else Number.From([Hit])
+
+![](Hits_new.png)
+
+### Values, Release Clause, Wages Column Transformation
+Value,Release Clause,and Wage contained string values in each of the column there was a  “€" sign across each columns and they were removed using the same method. I removed this by replacing the _Euro_ sign with **Blank**. The Value and Release Clause column contained "M", and the same process was repeated. I replaced "M" with **Blank** and it was effected in the column. The Wages column contained the value "K"
+Here is how the Columns looked like before transformation:expressionless:
+
+![]()
+
 
