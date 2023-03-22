@@ -98,3 +98,33 @@ Wage Column if Text.Contains([Wage], "K") then Number.From(Text.BeforeDelimiter(
 After all these transformations have been applied to the previous Column, this is what the Column looks like:cowboy_hat_face:
 
 ![](V,R,Wage_new.png)
+
+### Heights, Weight Column Tansformation
+Here, the height column were recorded in different units of measurements such as cm,inches,feets. To correct this, i ensured to covert all figures to "cm" using the following procedures 
+Identify all values in ft/in format using the Text.Contains function,after which separate the feet and inches values using the Text.BetweenDelimiters function.Then convert the feet value to cm by multiplying by 30.48. Convert the inches value to cm by multiplying by 2.54.Thereafter,i converted feet and inches values to get the final height in centimeters (cm).
+
+let 
+    cm = if Text.Contains([Height], "cm") then 
+            Number.From(Text.BeforeDelimiter([Height], "cm")) 
+         else 
+            null,
+    ft = Number.From(Text.BeforeDelimiter([Height], "'")),
+    inch = Number.From(Text.BetweenDelimiters([Height], "'", """)),
+    Result = if cm is null then (ft*30.48) + (inch*2.54) else cm
+in
+    Result
+    
+For the Weight Column, data entries in this field were recorded in "Kg" which i wanted to convert to pounds(lbs)
+The **M-Language** code checks if the Weight column contains “kg” as the unit of measurement. If it does, the value before “kg” is converted from kilograms to pounds (lbs) by multiplying it with 2.204. If the unit of measurement is “lbs”, then the value remains the same
+
+if Text.Contains([Weight], "kg") then
+    Number.From(Text.BeforeDelimiter([Weight], "kg")) * 2.204
+else
+    Number.From(Text.BeforeDelimiter([Weight], "lbs"))
+Below, is a representation of what it was before and after conversion :satisfied:
+
+
+    
+
+
+
