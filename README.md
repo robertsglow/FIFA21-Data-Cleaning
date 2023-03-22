@@ -124,7 +124,8 @@ else
 Below, is a representation of what it was before and after conversion :satisfied:
 
 
-    
+Heights/Weight Before                                                      |Heights/Weight After 
+:-----------------------------------------------------------:              |:---------------------------------------------------:
+![](old-.png)                                                              |![](new_hW-.png)
 
-
-
+**In Conclusion** This dataset have undergone several transformations,i have been able to perform some **M-Code** to make our cleaning easier and faster. Also, changing dataset types from texts to numeric form, cleaning of missing values to make our Analysis more accurate and error free.Now we can go ahead and Visualize if need be :blush: I really hope that this documentation is going to be helful for future purposes,and anyone working with this Dataset encountering one or more problems. You are Welcome:zany_face:
